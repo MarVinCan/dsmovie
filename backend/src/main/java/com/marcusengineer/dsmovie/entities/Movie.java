@@ -1,11 +1,13 @@
 package com.marcusengineer.dsmovie.entities;
 
-import java.util.Objects ;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +22,9 @@ public class Movie {
 	private Double score;
 	private Integer count;
 	private String image;
+	
+	@OneToMany(mappedBy = "id.movie")
+	private Set<Score> scores = new HashSet<>();
 	
 	public Movie() {
 	}
@@ -71,23 +76,9 @@ public class Movie {
 	public void setImage(String image) {
 		this.image = image;
 	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Movie other = (Movie) obj;
-		return Objects.equals(id, other.id);
-	}
 	
+	public Set<Score> getScores() {
+		return scores;
+	}
 	
 }
