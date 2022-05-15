@@ -1,0 +1,11 @@
+postgres://
+
+neazleyceqwczt
+:
+8b700fcb2aa0fc47e0d6f36fbcf6d9ae343f610e2c1a72d6a87885e071b08e38
+@
+ec2-3-217-113-25.compute-1.amazonaws.com
+:
+5432
+/
+d1qkjlotli7s1b
